@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Produits naturels pour femmes : soins pour la peau et les cheveux, 100% naturels et efficaces.">
+    <meta name="keywords" content="produits naturels, peau, cheveux, femmes, aloe vera, huile d'argan">
+    <title>Produits naturels pour femmes : tout pour la peau et les cheveux</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.5;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            animation: bounceIn 1.5s ease-out;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            animation: slideInLeft 1s ease-out 1s both;
+        }
+        nav a {
+            color: white;
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Hero Section with Slider */
+        .hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            width: 300%;
+            animation: slide 15s infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+        .slide {
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        .slide:nth-child(1) { background-image: url('https://via.placeholder.com/1200x500/4CAF50/FFFFFF?text=Naturelle+et+Pure'); }
+        .slide:nth-child(2) { background-image: url('https://via.placeholder.com/1200x500/66BB6A/FFFFFF?text=Beauté+Durable'); }
+        .slide:nth-child(3) { background-image: url('https://via.placeholder.com/1200x500/388E3C/FFFFFF?text=Pour+Votre+Peau'); }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: zoomIn 2s ease-out;
+        }
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        section {
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #388e3c;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+            transform: translateX(-50%);
+        }
+
+        /* Products Grid */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .product {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        .product:hover {
+            transform: translateY(-15px) rotate(1deg);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        .product img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product:hover img {
+            transform: scale(1.1);
+        }
+        .product-content {
+            padding: 25px;
+        }
+        .product h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+        .product p {
+            margin-bottom: 18px;
+            color: #7f8c8d;
+        }
+        .product button {
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            width: 100%;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .product button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .product button:hover::before {
+            left: 100%;
+        }
+        .product button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,0 100,50 50,100 0,50" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+        }
+        footer h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        footer p {
+            margin-bottom: 15px;
+        }
+        footer a {
+            color: #4caf50;
+            font-weight: 600;
+        }
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            margin: 0 15px;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            .products {
+                grid-template-columns: 1fr;
+            }
+            .slider {
+                width: 100%;
+                animation: none;
+            }
+            .slide {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Produits naturels pour femmes</h1>
+        <p>Tout pour la peau et les cheveux</p>
+        <nav>
+            <ul>
+                <li><a href="#peau">Peau</a></li>
+                <li><a href="#cheveux">Cheveux</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="slider">
+            <div class="slide">
+                <div class="hero-content">
+                    <h2>Découvrez la beauté naturelle</h2>
+                    <p>Des produits 100% naturels pour une peau éclatante et des cheveux soyeux.</p>
+                    <a href="#peau" class="cta-button">Explorer nos produits</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="hero-content">
+                    <h2>Beauté durable</h2>
+                    <p>Engagez-vous pour des soins respectueux de l'environnement.</p>
+                    <a href="#peau" class="cta-button">Voir plus</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="hero-content">
+                    <h2>Pour votre peau</h2>
+                    <p>Des ingrédients purs pour des résultats exceptionnels.</p>
+                    <a href="#peau" class="cta-button">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="peau">
+            <h2>Produits pour la peau</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="your-skin-product1.jpg" alt="Crème hydratante à l'aloé vera">
+                    <div class="product-content">
+                        <h3>Crème hydratante à l'aloé vera</h3>
+                        <p>100% naturelle, pour une peau douce et hydratée. Ingrédients : Aloé vera bio, huile d'amande douce.</p>
+                        <button>Acheter maintenant</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="your-skin-product2.jpg" alt="Masque purifiant à l'argile verte">
+                    <div class="product-content">
+                        <h3>Masque purifiant à l'argile verte</h3>
+                        <p>Élimine les impuretés et redonne éclat à votre peau. Parfait pour tous les types de peau.</p>
+                        <button>Acheter maintenant</button>
+                    </div>
+                </div>
+                <!-- Ajoutez plus de produits ici -->
+            </div>
+        </section>
+
+        <section id="cheveux">
+            <h2>Produits pour les cheveux</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="your-hair-product1.jpg" alt="Huile d'argan pour cheveux">
+                    <div class="product-content">
+                        <h3>Huile d'argan pour cheveux</h3>
+                        <p>Nourrit et fait briller les cheveux naturellement. Idéal pour cheveux secs ou abîmés.</p>
+                        <button>Acheter maintenant</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="your-hair-product2.jpg" alt="Shampooing aux herbes naturelles">
+                    <div class="product-content">
+                        <h3>Shampooing aux herbes naturelles</h3>
+                        <p>Doux et revitalisant, sans sulfates. Pour des cheveux forts et brillants.</p>
+                        <button>Acheter maintenant</button>
+                    </div>
+                </div>
+                <!-- Ajoutez plus de produits ici -->
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h3>Contactez-nous</h3>
+        <p>Email : <a href="mailto:contact@produitsnaturels.fr">productcosmetics870@gmail.com</a> | Téléphone : 0657076645</p>
+        <p>&copy; 2023 Produits Naturels. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+</html>
